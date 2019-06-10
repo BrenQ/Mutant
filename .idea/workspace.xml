@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7ee26abc-7562-434b-a551-e6c1fe4ec05d" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/MeLi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Brenda.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/bin/httptrace.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/arn.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/awserr.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/awsutil.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/client.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/client/metadata.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/corehandlers.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/credentials.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/credentials/plugincreds.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/credentials/processcreds.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/credentials/stscreds.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/crr.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/csm.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/defaults.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/ec2metadata.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/endpoints.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/request.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/session.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/aws/signer/v4.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/awstesting.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/awstesting/mock.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/awstesting/unit.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/internal/ini.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/internal/s3err.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/internal/sdkio.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/internal/sdkrand.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/internal/sdkuri.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/internal/shareddefaults.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/models/endpoints.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/model/api.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/model/api/codegentest/service.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/model/api/codegentest/service/awsendpointdiscoverytest.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/model/api/codegentest/service/awsendpointdiscoverytest/awsendpointdiscoverytestiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/model/api/codegentest/service/restjsonservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/model/api/codegentest/service/restjsonservice/restjsonserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/model/api/codegentest/service/restxmlservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/model/api/codegentest/service/restxmlservice/restxmlserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/model/api/codegentest/service/rpcservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/model/api/codegentest/service/rpcservice/rpcserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/ec2query.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/eventstream.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/eventstream/eventstreamapi.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/eventstream/eventstreamtest.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/query.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/query/queryutil.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/rest.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/restjson.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/restxml.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/signer/v2.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/private/util.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/acm.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/acm/acmiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/acmpca.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/acmpca/acmpcaiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/alexaforbusiness.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/alexaforbusiness/alexaforbusinessiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/amplify.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/amplify/amplifyiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/apigateway.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/apigateway/apigatewayiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/apigatewaymanagementapi.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/apigatewaymanagementapi/apigatewaymanagementapiiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/apigatewayv2.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/apigatewayv2/apigatewayv2iface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/applicationautoscaling.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/applicationautoscaling/applicationautoscalingiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/applicationdiscoveryservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/applicationdiscoveryservice/applicationdiscoveryserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/appmesh.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/appmesh/appmeshiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/appstream.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/appstream/appstreamiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/appsync.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/appsync/appsynciface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/athena.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/athena/athenaiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/autoscaling.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/autoscaling/autoscalingiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/autoscalingplans.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/autoscalingplans/autoscalingplansiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/backup.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/backup/backupiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/batch.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/batch/batchiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/budgets.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/budgets/budgetsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/chime.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/chime/chimeiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloud9.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloud9/cloud9iface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/clouddirectory.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/clouddirectory/clouddirectoryiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudformation.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudformation/cloudformationiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudfront.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudfront/cloudfrontiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudfront/sign.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudhsm.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudhsm/cloudhsmiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudhsmv2.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudhsmv2/cloudhsmv2iface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudsearch.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudsearch/cloudsearchiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudsearchdomain.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudsearchdomain/cloudsearchdomainiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudtrail.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudtrail/cloudtrailiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudwatch.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudwatch/cloudwatchiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudwatchevents.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudwatchevents/cloudwatcheventsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudwatchlogs.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cloudwatchlogs/cloudwatchlogsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/codebuild.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/codebuild/codebuildiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/codecommit.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/codecommit/codecommitiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/codedeploy.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/codedeploy/codedeployiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/codepipeline.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/codepipeline/codepipelineiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/codestar.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/codestar/codestariface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cognitoidentity.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cognitoidentity/cognitoidentityiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cognitoidentityprovider.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cognitoidentityprovider/cognitoidentityprovideriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cognitosync.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/cognitosync/cognitosynciface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/comprehend.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/comprehend/comprehendiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/comprehendmedical.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/comprehendmedical/comprehendmedicaliface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/configservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/configservice/configserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/connect.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/connect/connectiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/costandusagereportservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/costandusagereportservice/costandusagereportserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/costexplorer.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/costexplorer/costexploreriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/databasemigrationservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/databasemigrationservice/databasemigrationserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/datapipeline.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/datapipeline/datapipelineiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/datasync.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/datasync/datasynciface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/dax.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/dax/daxiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/devicefarm.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/devicefarm/devicefarmiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/directconnect.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/directconnect/directconnectiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/directoryservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/directoryservice/directoryserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/dlm.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/dlm/dlmiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/docdb.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/docdb/docdbiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/dynamodb.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/dynamodb/dynamodbiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/dynamodb/expression.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/dynamodbstreams.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/dynamodbstreams/dynamodbstreamsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ec2.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ec2/ec2iface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ecr.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ecr/ecriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ecs.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ecs/ecsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/efs.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/efs/efsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/eks.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/eks/eksiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elasticache.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elasticache/elasticacheiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elasticbeanstalk.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elasticbeanstalk/elasticbeanstalkiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elasticsearchservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elasticsearchservice/elasticsearchserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elastictranscoder.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elastictranscoder/elastictranscoderiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elb.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elb/elbiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elbv2.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/elbv2/elbv2iface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/emr.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/emr/emriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/firehose.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/firehose/firehoseiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/fms.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/fms/fmsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/fsx.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/fsx/fsxiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/gamelift.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/gamelift/gameliftiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/glacier.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/glacier/glacieriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/globalaccelerator.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/globalaccelerator/globalacceleratoriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/glue.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/glue/glueiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/greengrass.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/greengrass/greengrassiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/groundstation.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/groundstation/groundstationiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/guardduty.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/guardduty/guarddutyiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/health.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/health/healthiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iam.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iam/iamiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/inspector.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/inspector/inspectoriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iot.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iot/iotiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iot1clickdevicesservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iot1clickdevicesservice/iot1clickdevicesserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iot1clickprojects.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iot1clickprojects/iot1clickprojectsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iotanalytics.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iotanalytics/iotanalyticsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iotdataplane.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iotdataplane/iotdataplaneiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iotevents.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iotevents/ioteventsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ioteventsdata.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ioteventsdata/ioteventsdataiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iotjobsdataplane.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iotjobsdataplane/iotjobsdataplaneiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iotthingsgraph.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/iotthingsgraph/iotthingsgraphiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kafka.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kafka/kafkaiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesis.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesis/kinesisiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesisanalytics.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesisanalytics/kinesisanalyticsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesisanalyticsv2.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesisanalyticsv2/kinesisanalyticsv2iface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesisvideo.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesisvideo/kinesisvideoiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesisvideoarchivedmedia.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesisvideoarchivedmedia/kinesisvideoarchivedmediaiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesisvideomedia.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kinesisvideomedia/kinesisvideomediaiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kms.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/kms/kmsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/lambda.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/lambda/lambdaiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/lexmodelbuildingservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/lexmodelbuildingservice/lexmodelbuildingserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/lexruntimeservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/lexruntimeservice/lexruntimeserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/licensemanager.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/licensemanager/licensemanageriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/lightsail.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/lightsail/lightsailiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/machinelearning.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/machinelearning/machinelearningiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/macie.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/macie/macieiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/managedblockchain.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/managedblockchain/managedblockchainiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/marketplacecommerceanalytics.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/marketplacecommerceanalytics/marketplacecommerceanalyticsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/marketplaceentitlementservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/marketplaceentitlementservice/marketplaceentitlementserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/marketplacemetering.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/marketplacemetering/marketplacemeteringiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediaconnect.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediaconnect/mediaconnectiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediaconvert.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediaconvert/mediaconvertiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/medialive.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/medialive/medialiveiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediapackage.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediapackage/mediapackageiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediapackagevod.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediapackagevod/mediapackagevodiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediastore.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediastore/mediastoreiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediastoredata.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediastoredata/mediastoredataiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediatailor.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mediatailor/mediatailoriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/migrationhub.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/migrationhub/migrationhubiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mobile.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mobile/mobileiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mobileanalytics.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mobileanalytics/mobileanalyticsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mq.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mq/mqiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mturk.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/mturk/mturkiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/neptune.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/neptune/neptuneiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/opsworks.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/opsworks/opsworksiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/opsworkscm.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/opsworkscm/opsworkscmiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/organizations.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/organizations/organizationsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/pi.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/pi/piiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/pinpoint.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/pinpoint/pinpointiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/pinpointemail.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/pinpointemail/pinpointemailiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/pinpointsmsvoice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/pinpointsmsvoice/pinpointsmsvoiceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/polly.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/polly/pollyiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/pricing.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/pricing/pricingiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/quicksight.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/quicksight/quicksightiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ram.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ram/ramiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/rds.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/rds/rdsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/rds/rdsutils.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/rdsdataservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/rdsdataservice/rdsdataserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/redshift.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/redshift/redshiftiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/rekognition.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/rekognition/rekognitioniface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/resourcegroups.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/resourcegroups/resourcegroupsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/resourcegroupstaggingapi.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/resourcegroupstaggingapi/resourcegroupstaggingapiiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/robomaker.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/robomaker/robomakeriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/route53.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/route53/route53iface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/route53domains.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/route53domains/route53domainsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/route53resolver.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/route53resolver/route53resolveriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/s3.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/s3/s3crypto.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/s3/s3iface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/s3/s3manager.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/s3/s3manager/s3manageriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/s3control.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/s3control/s3controliface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sagemaker.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sagemaker/sagemakeriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sagemakerruntime.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sagemakerruntime/sagemakerruntimeiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/secretsmanager.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/secretsmanager/secretsmanageriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/securityhub.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/securityhub/securityhubiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/serverlessapplicationrepository.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/serverlessapplicationrepository/serverlessapplicationrepositoryiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/servicecatalog.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/servicecatalog/servicecatalogiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/servicediscovery.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/servicediscovery/servicediscoveryiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ses.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ses/sesiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sfn.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sfn/sfniface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/shield.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/shield/shieldiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/signer.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/signer/signeriface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/simpledb.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/simpledb/simpledbiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sms.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sms/smsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/snowball.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/snowball/snowballiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sns.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sns/snsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sqs.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sqs/sqsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ssm.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/ssm/ssmiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/storagegateway.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/storagegateway/storagegatewayiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sts.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/sts/stsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/support.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/support/supportiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/swf.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/swf/swfiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/textract.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/textract/textractiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/transcribeservice.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/transcribeservice/transcribeserviceiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/transfer.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/transfer/transferiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/translate.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/translate/translateiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/waf.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/waf/wafiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/wafregional.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/wafregional/wafregionaliface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/workdocs.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/workdocs/workdocsiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/worklink.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/worklink/worklinkiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/workmail.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/workmail/workmailiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/workspaces.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/workspaces/workspacesiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/xray.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkg/windows_amd64/github.com/aws/aws-sdk-go/service/xray/xrayiface.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/src/golang.org/x/net" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/src/golang.org/x/text" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src.exe" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="MeLi" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="105" column="4" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
+              <folding>
+                <element signature="e#14#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="urls">
+      <list>
+        <option value="file://$PROJECT_DIR$/bin" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/src/main.go" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MeLi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MeLi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MeLi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MeLi" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MeLi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MeLi" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MeLi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MeLi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="go.dep.advertise" value="false" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7ee26abc-7562-434b-a551-e6c1fe4ec05d" name="Default" comment="" />
+      <created>1559260239540</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559260239540</updated>
+      <workItem from="1559260240924" duration="161000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="161000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.70934254" visible="true" weight="0.1704698" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.29065743" side_tool="true" weight="0.2637584" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4986577" visible="true" weight="0.375" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013423" side_tool="true" weight="0.39558825" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.go" />
+    <entry file="file://$PROJECT_DIR$/src/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="105" column="4" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
+          <folding>
+            <element signature="e#14#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

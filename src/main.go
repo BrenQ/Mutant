@@ -1,0 +1,108 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+
+/**
+	Estructura para almacenar la secuencia
+ */
+type Dna struct {
+	n, size , pattern int
+	sequence [] rune
+}
+
+/**
+	@method Inicializa los valores del struct dna
+ */
+func (d Dna) init() {
+	d.n = 0
+	d.size = 0
+	d.pattern = 0
+	d.sequence = make([]rune, 0)
+}
+
+/**
+	@method Almacena los valores necesarios para operar
+ */
+func (d * Dna) register(data[]string ) {
+	d.n = len(data)
+
+	for _, value := range data {
+		for _, letter := range value {
+			d.sequence = append(d.sequence, letter)
+		}
+	}
+	d.size = len(d.sequence)
+}
+
+/**
+	@method  Verifica que un humano es mutando
+ */
+func(d * Dna) isMutant(data[] string) bool {
+	const Sequences = 2 // Cantidad de secuencias requeridas para comprobar que es un mutante
+
+	d.init()
+	d.register(data)
+	// Recorro los elementos para verificar si se registra un patron
+	for index,letter := range d.sequence {
+		if d.pattern > Sequences {
+			return true
+		}
+		d.iterate(index, letter)
+	}
+	return false
+}
+/**
+	@method Funcion auxiliar que recorre un array de funciones.
+			Este array de funciones contiene la logica que define
+			con que valores comparar segun la ubicacion
+ */
+func(d *Dna) iterate(index int, letter rune) {
+
+	functions := []func(index int, n int) int {
+		func(index int, n int ) int { return index + 1 },
+		func(index int , n int) int { return index + n },
+		func(index int , n int) int { return index - n - 1 },
+		func(index int , n int) int { return index - n + 1 },
+		func(index int , n int) int { return index + n - 1 },
+		func(index int , n int) int { return index + n + 1 },
+	}
+
+	for _, function:=range functions {
+		if d.check(function , index ,  letter , 0) {
+			d.pattern++
+		}
+	}
+}
+
+/**
+	@method Funcion recursiva que segun la direccion calculada a travez del indica
+			verifica si existe un patron y lo acumula.
+			Se comprueba un patron si este tiene 4 letras contiguas segun su direcicon
+ */
+func(d *Dna) check(function func(index int, n int) int, index int, letter rune , pattern int) bool {
+	result := false
+	newIndex := function(index, d.n)
+
+	if pattern == 3 {
+		result = true
+	}
+
+	if (newIndex > 0 && newIndex < d.size)  && (d.sequence[newIndex] == letter && pattern < 4 )  {
+		pattern++
+		return d.check(function, newIndex , letter, pattern)
+	}
+	return result
+}
+
+func main() {
+	http.HandleFunc("/mutant", func(writer http.ResponseWriter, request *http.Request) {
+		dna := []string{"ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"} // Funcion de prueba
+		sequence := Dna{}
+		fmt.Println(sequence.isMutant(dna))
+	})
+
+	_ = http.ListenAndServe(":8000", nil)
+}
