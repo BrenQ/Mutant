@@ -1,40 +1,48 @@
 package main
 
 import (
-	"fmt"
+	"encoding/json"
 	"net/http"
+	"github.com/gorilla/mux"
+	"log"
+	//"encoding/json"
 )
 
+type DnaRequest struct {
+	Sequence [] string `json:"Sequence,omitempty"`
+}
 /**
 	Estructura para almacenar la secuencia
  */
 type Dna struct {
-	n, size , pattern int
-	sequence [] rune
+	N int `json:"N,omitempty"`
+	Size int `json:"Size,omitempty"`
+	Pattern int `json:"Pattern,omitempty"`
+	Sequence []rune `json:"Sequence,omitempty"`
 }
 
 /**
 	@method Inicializa los valores del struct dna
  */
 func (d Dna) init() {
-	d.n = 0
-	d.size = 0
-	d.pattern = 0
-	d.sequence = make([]rune, 0)
+	d.N = 0
+	d.Size = 0
+	d.Pattern = 0
+	d.Sequence = make([]rune, 0)
 }
 
 /**
 	@method Almacena los valores necesarios para operar
  */
 func (d * Dna) register(data[]string ) {
-	d.n = len(data)
+	d.N = len(data)
 
 	for _, value := range data {
 		for _, letter := range value {
-			d.sequence = append(d.sequence, letter)
+			d.Sequence = append(d.Sequence, letter)
 		}
 	}
-	d.size = len(d.sequence)
+	d.Size = len(d.Sequence)
 }
 
 /**
@@ -46,8 +54,8 @@ func(d * Dna) isMutant(data[] string) bool {
 	d.init()
 	d.register(data)
 	// Recorro los elementos para verificar si se registra un patron
-	for index,letter := range d.sequence {
-		if d.pattern > Sequences {
+	for index,letter := range d.Sequence {
+		if d.Pattern > Sequences {
 			return true
 		}
 		d.iterate(index, letter)
@@ -72,7 +80,7 @@ func(d *Dna) iterate(index int, letter rune) {
 
 	for _, function:=range functions {
 		if d.check(function , index ,  letter , 0) {
-			d.pattern++
+			d.Pattern++
 		}
 	}
 }
@@ -84,13 +92,13 @@ func(d *Dna) iterate(index int, letter rune) {
  */
 func(d *Dna) check(function func(index int, n int) int, index int, letter rune , pattern int) bool {
 	result := false
-	newIndex := function(index, d.n)
+	newIndex := function(index, d.N)
 
 	if pattern == 3 {
 		result = true
 	}
 
-	if (newIndex > 0 && newIndex < d.size)  && (d.sequence[newIndex] == letter && pattern < 4 )  {
+	if (newIndex > 0 && newIndex < d.Size)  && (d.Sequence[newIndex] == letter && pattern < 4 )  {
 		pattern++
 		return d.check(function, newIndex , letter, pattern)
 	}
@@ -98,11 +106,29 @@ func(d *Dna) check(function func(index int, n int) int, index int, letter rune ,
 }
 
 func main() {
-	http.HandleFunc("/mutant", func(writer http.ResponseWriter, request *http.Request) {
-		dna := []string{"ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"} // Funcion de prueba
-		sequence := Dna{}
-		fmt.Println(sequence.isMutant(dna))
-	})
 
-	_ = http.ListenAndServe(":8000", nil)
+	router := mux.NewRouter()
+
+	router.HandleFunc("/mutant", func(writer http.ResponseWriter, request *http.Request) {
+
+		writer.Header().Set("Content-Type", "application/json")
+
+		var DnaSequence DnaRequest
+		err := json.NewDecoder(request.Body).Decode(&DnaSequence)
+		if err != nil {
+			panic(err)
+		}
+		sequence := Dna{}
+		result := sequence.isMutant(DnaSequence.Sequence)
+
+		writer.Header().Set("Content-Type", "application/json")
+		if result {
+			writer.WriteHeader(http.StatusOK)
+			return
+		}
+		writer.WriteHeader(http.StatusForbidden)
+
+	}).Methods("POST")
+
+	log.Fatal(http.ListenAndServe(":5000", router))
 }
