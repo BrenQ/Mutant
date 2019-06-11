@@ -2,17 +2,20 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"github.com/gorilla/mux"
 	"log"
 	//"encoding/json"
 )
-
+/**
+	Estructura para almacenar el request recibido
+ */
 type DnaRequest struct {
-	Sequence [] string `json:"Sequence,omitempty"`
+	Dna [] string `json:"Dna,omitempty"`
 }
 /**
-	Estructura para almacenar la secuencia
+	Estructura que almacena la estructura y los datos necesarios para el dna
  */
 type Dna struct {
 	N int `json:"N,omitempty"`
@@ -108,7 +111,9 @@ func(d *Dna) check(function func(index int, n int) int, index int, letter rune ,
 func main() {
 
 	router := mux.NewRouter()
-
+	/**
+		@method  Ruta donde se realiza la verificacion si un ADN recibido pertenece a un humano o mutante
+	 */
 	router.HandleFunc("/mutant", func(writer http.ResponseWriter, request *http.Request) {
 
 		writer.Header().Set("Content-Type", "application/json")
@@ -119,7 +124,8 @@ func main() {
 			panic(err)
 		}
 		sequence := Dna{}
-		result := sequence.isMutant(DnaSequence.Sequence)
+		fmt.Println(DnaSequence.Dna)
+		result := sequence.isMutant(DnaSequence.Dna)
 
 		writer.Header().Set("Content-Type", "application/json")
 		if result {
