@@ -2,10 +2,20 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/gorilla/mux"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log"
+	"context"
 	"net/http"
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
+	"time"
 )
+
+// Variable donde se almacena la instancia de la DB
+var Db *mongo.Database
 /**
 	Estructura para almacenar el request recibido
  */
@@ -24,11 +34,12 @@ type Response struct {
 	Estructura que almacena la estructura y los datos necesarios para el dna
  */
 type Dna struct {
-	N int `json:"N,omitempty"`
-	Size int `json:"Size,omitempty"`
-	Pattern int `json:"Pattern,omitempty"`
-	Sequence []rune `json:"Sequence,omitempty"`
-	Response Response `json:"Response,omitempty"`
+	ID primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty" `
+	N int `json:"N,omitempty" bson:"n,omitempty" `
+	Size int `json:"Size,omitempty" bson:"size,omitempty"`
+	Pattern int `json:"Pattern,omitempty" bson:"pattern,omitempty"`
+	Sequence []rune `json:"Sequence,omitempty"  bson:"sequence,omitempty"`
+	Response Response `json:"Response,omitempty"  bson:"response,omitempty"`
 }
 
 /**
@@ -39,23 +50,50 @@ func (d Dna) init() {
 	d.Size = 0
 	d.Pattern = 0
 	d.Sequence = make([]rune, 0)
+
+	ctx, _ := context.WithTimeout(context.Background(), 10* time.Second)
+
+	client, err := mongo.NewClient( options.Client().ApplyURI("mongodb://localhost:27017"))
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = client.Connect(ctx)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	Db = client.Database("dna")
 }
 
 func (r * Response) add(code int , message string ){
-	r.Code = code
-	r.Message = message
+	if r != nil {
+		r.Code = code
+		r.Message = message
+	}
 }
 /**
 	@method Almacena los valores necesarios para operar
  */
 func (d * Dna) register(data[]string ) bool {
-	d.N = len(data)
 
+	if len(data)  == 0 {
+		d.Response.add(400, "La secuencia está vacía")
+		return false
+}
+	d.N = len(data)
 	for _, value := range data {
 		if  len(value) != d.N{
+			d.Response.add(400, "La matriz ingresada debe ser cuadrada")
 			return false
 		}
 		for _, letter := range value {
+
+			if ! validateLetter(letter) {
+				d.Response.add(400, "Las letras permitidas son A,T,G,C")
+				return false
+			}
 			d.Sequence = append(d.Sequence, letter)
 		}
 	}
@@ -73,8 +111,7 @@ func(d * Dna) isMutant(data[] string) bool {
 	registered := d.register(data)
 	// Recorro los elementos para verificar si se registra un patron
 	if ! registered {
-		d.Response.add(400, "La matriz ingresada debe ser cuadrada")
-		return false;
+		return false
 	}
 
 	for index,letter := range d.Sequence {
@@ -111,6 +148,21 @@ func(d *Dna) iterate(index int, letter rune) {
 }
 
 /**
+	Funcion auxiliar para verificar si una letra es valida
+ */
+
+func validateLetter(letter rune ) bool {
+	 letters := []rune{'A','T','C','G'}
+
+	for _, value := range letters {
+		if value == letter {
+			return true
+		}
+	}
+	return false
+}
+
+/**
 	@method Funcion recursiva que segun la direccion calculada a travez del indica
 			verifica si existe un patron y lo acumula.
 			Se comprueba un patron si este tiene 4 letras contiguas segun su direcicon
@@ -130,6 +182,7 @@ func(d *Dna) check(function func(index int, n int) int, index int, letter rune ,
 	return result
 }
 
+
 func main() {
 
 	router := mux.NewRouter()
@@ -146,6 +199,7 @@ func main() {
 			panic(err)
 		}
 		sequence := Dna{}
+		fmt.Println(DnaSequence.Dna)
 		_ = sequence.isMutant(DnaSequence.Dna)
 
 		writer.Header().Set("Content-Type", "application/json")
