@@ -4,9 +4,18 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log"
+	"context"
 	"net/http"
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
+	"time"
 )
+
+// Variable donde se almacena la instancia de la DB
+var Db *mongo.Database
 /**
 	Estructura para almacenar el request recibido
  */
@@ -25,11 +34,12 @@ type Response struct {
 	Estructura que almacena la estructura y los datos necesarios para el dna
  */
 type Dna struct {
-	N int `json:"N,omitempty"`
-	Size int `json:"Size,omitempty"`
-	Pattern int `json:"Pattern,omitempty"`
-	Sequence []rune `json:"Sequence,omitempty"`
-	Response Response `json:"Response,omitempty"`
+	ID primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty" `
+	N int `json:"N,omitempty" bson:"n,omitempty" `
+	Size int `json:"Size,omitempty" bson:"size,omitempty"`
+	Pattern int `json:"Pattern,omitempty" bson:"pattern,omitempty"`
+	Sequence []rune `json:"Sequence,omitempty"  bson:"sequence,omitempty"`
+	Response Response `json:"Response,omitempty"  bson:"response,omitempty"`
 }
 
 /**
@@ -40,6 +50,21 @@ func (d Dna) init() {
 	d.Size = 0
 	d.Pattern = 0
 	d.Sequence = make([]rune, 0)
+
+	ctx, _ := context.WithTimeout(context.Background(), 10* time.Second)
+
+	client, err := mongo.NewClient( options.Client().ApplyURI("mongodb://localhost:27017"))
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = client.Connect(ctx)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	Db = client.Database("dna")
 }
 
 func (r * Response) add(code int , message string ){
@@ -156,6 +181,7 @@ func(d *Dna) check(function func(index int, n int) int, index int, letter rune ,
 	}
 	return result
 }
+
 
 func main() {
 
