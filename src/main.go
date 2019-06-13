@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
@@ -42,20 +43,32 @@ func (d Dna) init() {
 }
 
 func (r * Response) add(code int , message string ){
-	r.Code = code
-	r.Message = message
+	if r != nil {
+		r.Code = code
+		r.Message = message
+	}
 }
 /**
 	@method Almacena los valores necesarios para operar
  */
 func (d * Dna) register(data[]string ) bool {
-	d.N = len(data)
 
+	if len(data)  == 0 {
+		d.Response.add(400, "La secuencia está vacía")
+		return false
+}
+	d.N = len(data)
 	for _, value := range data {
 		if  len(value) != d.N{
+			d.Response.add(400, "La matriz ingresada debe ser cuadrada")
 			return false
 		}
 		for _, letter := range value {
+
+			if ! validateLetter(letter) {
+				d.Response.add(400, "Las letras permitidas son A,T,G,C")
+				return false
+			}
 			d.Sequence = append(d.Sequence, letter)
 		}
 	}
@@ -73,8 +86,7 @@ func(d * Dna) isMutant(data[] string) bool {
 	registered := d.register(data)
 	// Recorro los elementos para verificar si se registra un patron
 	if ! registered {
-		d.Response.add(400, "La matriz ingresada debe ser cuadrada")
-		return false;
+		return false
 	}
 
 	for index,letter := range d.Sequence {
@@ -108,6 +120,21 @@ func(d *Dna) iterate(index int, letter rune) {
 			d.Pattern++
 		}
 	}
+}
+
+/**
+	Funcion auxiliar para verificar si una letra es valida
+ */
+
+func validateLetter(letter rune ) bool {
+	 letters := []rune{'A','T','C','G'}
+
+	for _, value := range letters {
+		if value == letter {
+			return true
+		}
+	}
+	return false
 }
 
 /**
@@ -146,6 +173,7 @@ func main() {
 			panic(err)
 		}
 		sequence := Dna{}
+		fmt.Println(DnaSequence.Dna)
 		_ = sequence.isMutant(DnaSequence.Dna)
 
 		writer.Header().Set("Content-Type", "application/json")
