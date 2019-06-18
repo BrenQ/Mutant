@@ -1,19 +1,16 @@
 package main
 
 import (
-	"context"
 	"encoding/json"
 	"github.com/gorilla/mux"
-	"go.mongodb.org/mongo-driver/bson/primitive"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
 	"log"
 	"net/http"
-	"time"
+	"gopkg.in/mgo.v2"
+	"gopkg.in/mgo.v2/bson"
 )
 
 // Variable donde se almacena la instancia de la DB
-var Db *mongo.Database
+var Db *mgo.Database
 /**
 Estructura para almacenar el request recibido
 */
@@ -33,7 +30,7 @@ type Response struct {
 Estructura que almacena la estructura y los datos necesarios para el dna
 */
 type Dna struct {
-	ID         primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty" `
+	ID         bson.ObjectId `json:"_id,omitempty" bson:"_id,omitempty" `
 	N          int                `json:"N,omitempty" bson:"n,omitempty" `
 	Size       int                `json:"Size,omitempty" bson:"size,omitempty"`
 	Pattern    int                `json:"Pattern,omitempty" bson:"pattern,omitempty"`
@@ -52,21 +49,13 @@ func (d Dna) init() {
 	d.Pattern = 0
 	d.Sequence = make([]rune, 0)
 
-	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-
-	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27017"))
-
-	if err != nil {
-		log.Fatal(err)
-	}
-	err = client.Connect(ctx)
+	client, err := mgo.Dial("mongodb://localhost:27017")
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	Db = client.Database("dna")
-
+	Db = client.DB("dna")
 }
 
 func (r *Response) add(code int, message string) {
@@ -210,7 +199,11 @@ func main() {
 		_ = sequence.isMutant(DnaSequence.Dna)
 
 		writer.Header().Set("Content-Type", "application/json")
-		_, err = Db.Collection("sequence").InsertOne(context.TODO(), sequence)
+		err = Db.C("sequence").Insert(sequence)
+
+		if err != nil {
+			log.Print(err)
+		}
 		response := json.NewEncoder(writer).Encode(sequence.Response)
 
 		if response != nil {
@@ -219,13 +212,18 @@ func main() {
 	}).Methods("POST")
 
 	router.HandleFunc("/stats", func(writer http.ResponseWriter, request *http.Request) {
-		/*
-		result, err := Db.Collection("sequence").Aggregate(context.TODO(), mongo.Pipeline{
-			bson.D({
-				"$match": bson.M("IsMutant": true)
-			})
-		})
-		*/
+
+		sequence := Dna{}
+		sequence.init()
+		pipeline := []bson.M {
+			bson.M{
+				"$match" : bson.M{"IsMutant": true},
+			},
+		}
+		var result []bson.M
+		_ = Db.C("sequence").Pipe(pipeline).All(&result)
+		_ = json.NewEncoder(writer).Encode(result)
+
 	}).Methods("GET")
-	log.Fatal(http.ListenAndServe(":5000", router))
+	log.Fatal(http.ListenAndServe(":6000", router))
 }
