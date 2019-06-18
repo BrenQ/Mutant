@@ -108,8 +108,8 @@ Puede consultar esta info
 	
        {
            “count_mutant_dna”:40, 
-          “count_human_dna”:100: 
-          “ratio”:0.4
+           “count_human_dna”:100: 
+           “ratio”:0.4
        } 
 
 ## Success response
