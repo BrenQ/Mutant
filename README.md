@@ -1,4 +1,3 @@
-
 ## **Examen Mercadolibre**
 
  
@@ -91,4 +90,26 @@ Para verificar que su secuencia de ADN pertenece a un humano o un mutante va a t
 **Condicion** : Si un humano no es mutante:
 **Code**: `403-Forbidden `
 
+**Estadisticas**
 
+Tambien la APP permite obtener estadísticas en base a la información almacenada :) 
+
+Puede consultar esta info
+
+- URL : `/stats`
+ - Method: `GET`
+ - Auth required : `No`
+ - Data required : 
+     - `No`
+     -
+    GET /stats
+	    {
+	       “count_mutant_dna”:40, 
+	      “count_human_dna”:100: 
+	      “ratio”:0.4
+	   } 
+
+## Success response
+
+**Condicion** : Devuelve la estadística almacenada :
+**Code**: `200 - OK`
