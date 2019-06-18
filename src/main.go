@@ -3,10 +3,10 @@ package main
 import (
 	"encoding/json"
 	"github.com/gorilla/mux"
-	"log"
-	"net/http"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"log"
+	"net/http"
 )
 
 // Variable donde se almacena la instancia de la DB
@@ -31,13 +31,13 @@ Estructura que almacena la estructura y los datos necesarios para el dna
 */
 type Dna struct {
 	ID         bson.ObjectId `json:"_id,omitempty" bson:"_id,omitempty" `
-	N          int                `json:"N,omitempty" bson:"n,omitempty" `
-	Size       int                `json:"Size,omitempty" bson:"size,omitempty"`
-	Pattern    int                `json:"Pattern,omitempty" bson:"pattern,omitempty"`
-	Sequence   []rune             `json:"Sequence,omitempty"  bson:"sequence,omitempty"`
-	IsMutant   bool               `json:"IsMutant,omitempty"  bson:"IsMutant,omitempty"`
-	Response   Response           `json:"Response,omitempty"  bson:"response,omitempty"`
-	Iterations int                `json:"iterations,omitempty"  bson:"iterations,omitempty"`
+	N          int           `json:"N,omitempty" bson:"n,omitempty" `
+	Size       int           `json:"Size,omitempty" bson:"size,omitempty"`
+	Pattern    int           `json:"Pattern,omitempty" bson:"pattern,omitempty"`
+	Sequence   []rune        `json:"Sequence,omitempty"  bson:"sequence,omitempty"`
+	IsMutant   bool          `json:"IsMutant,omitempty"  bson:"IsMutant,omitempty"`
+	Response   Response      `json:"Response,omitempty"  bson:"response,omitempty"`
+	Iterations int           `json:"iterations,omitempty"  bson:"iterations,omitempty"`
 }
 
 /**
@@ -215,15 +215,38 @@ func main() {
 
 		sequence := Dna{}
 		sequence.init()
-		pipeline := []bson.M {
+		pipeline := []bson.M{
+			bson.M{"$group":
+				bson.M{"_id": 0,
+					"count_mutant_dna": bson.M{
+						"$sum":
+						bson.M{"$cond":
+						[]interface{}{bson.M{"$eq": []interface{}{"$IsMutant", true}}, 1, 0},
+						},
+					},
+					"count_human_dna": bson.M{
+						"$sum":
+						bson.M{"$cond":
+						[]interface{}{bson.M{"$ifNull": []interface{}{"$IsMutant", false}}, 0, 1},
+						},
+					},
+				},
+			},
 			bson.M{
-				"$match" : bson.M{"IsMutant": true},
+				"$project": bson.M{"_id":0,
+					"count_mutant_dna": "$count_mutant_dna",
+					"count_human_dna": "$count_human_dna",
+					"ratio": bson.M{
+						"$divide": []interface{}{"$count_mutant_dna", "$count_human_dna"}},
+				},
 			},
 		}
-		var result []bson.M
-		_ = Db.C("sequence").Pipe(pipeline).All(&result)
-		_ = json.NewEncoder(writer).Encode(result)
 
-	}).Methods("GET")
-	log.Fatal(http.ListenAndServe(":6000", router))
+var result []bson.M
+_ = Db.C("sequence").Pipe(pipeline).All(&result)
+
+_ = json.NewEncoder(writer).Encode(result)
+
+}).Methods("GET")
+log.Fatal(http.ListenAndServe(":6000", router))
 }
