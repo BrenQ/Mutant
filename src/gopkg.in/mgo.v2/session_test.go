@@ -270,7 +270,7 @@ func (s *S) TestFindRef(c *C) {
 	c.Assert(result.N, Equals, 3)
 
 	f := func() { session.FindRef(ref1).One(&result) }
-	c.Assert(f, PanicMatches, "Can't resolve database for &mgo.DBRef{Collection:\"col1\", Id:1, Database:\"\"}")
+	c.Assert(f, PanicMatches, "Can't resolve configuration for &mgo.DBRef{Collection:\"col1\", Id:1, Database:\"\"}")
 }
 
 func (s *S) TestDatabaseAndCollectionNames(c *C) {
@@ -1745,7 +1745,7 @@ func (s *S) TestFindIterLimitWithBatch(c *C) {
 		coll.Insert(M{"n": n})
 	}
 
-	// Ping the database to ensure the nonce has been received already.
+	// Ping the configuration to ensure the nonce has been received already.
 	c.Assert(session.Ping(), IsNil)
 
 	session.Refresh() // Release socket.
@@ -1808,7 +1808,7 @@ func (s *S) TestFindIterSortWithBatch(c *C) {
 	// return a cursor with an in-memory sort.
 	coll.EnsureIndexKey("n")
 
-	// Ping the database to ensure the nonce has been received already.
+	// Ping the configuration to ensure the nonce has been received already.
 	c.Assert(session.Ping(), IsNil)
 
 	session.Refresh() // Release socket.
@@ -4201,7 +4201,7 @@ func (s *S) TestVersionAtLeast(c *C) {
 }
 
 // --------------------------------------------------------------------------
-// Some benchmarks that require a running database.
+// Some benchmarks that require a running configuration.
 
 func (s *S) BenchmarkFindIterRaw(c *C) {
 	session, err := mgo.Dial("localhost:40001")

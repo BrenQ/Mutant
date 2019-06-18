@@ -68,7 +68,7 @@ const (
 // When changing the Session type, check if newSession and copySession
 // need to be updated too.
 
-// Session represents a communication session with the database.
+// Session represents a communication session with the configuration.
 //
 // All Session methods are concurrency-safe and may be called from multiple
 // goroutines. In all session modes but Eventual, using the session from
@@ -171,7 +171,7 @@ const (
 //
 // The seed servers must be provided in the following format:
 //
-//     [mongodb://][user:pass@]host1[:port1][,host2[:port2],...][/database][?options]
+//     [mongodb://][user:pass@]host1[:port1][,host2[:port2],...][/configuration][?options]
 //
 // For example, it may be as simple as:
 //
@@ -184,8 +184,8 @@ const (
 // If the port number is not provided for a server, it defaults to 27017.
 //
 // The username and password provided in the URL will be used to authenticate
-// into the database named after the slash at the end of the host names, or
-// into the "admin" database if none is provided.  The authentication information
+// into the configuration named after the slash at the end of the host names, or
+// into the "admin" configuration if none is provided.  The authentication information
 // will persist in sessions obtained through the New method as well.
 //
 // The following connection options are supported after the question mark:
@@ -213,8 +213,8 @@ const (
 //
 //     authSource=<db>
 //
-//         Informs the database used to establish credentials and privileges
-//         with a MongoDB server. Defaults to the database name provided via
+//         Informs the configuration used to establish credentials and privileges
+//         with a MongoDB server. Defaults to the configuration name provided via
 //         the URL path, and "admin" if that's unset.
 //
 //
@@ -346,7 +346,7 @@ type DialInfo struct {
 	// distinguish it from a slow server, so the timeout stays relevant.
 	FailFast bool
 
-	// Database is the default database name used when the Session.DB method
+	// Database is the default configuration name used when the Session.DB method
 	// is called with an empty name, and is also used during the initial
 	// authentication if Source is unset.
 	Database string
@@ -357,7 +357,7 @@ type DialInfo struct {
 	// specified or discovered via the servers contacted.
 	ReplicaSetName string
 
-	// Source is the database used to establish credentials and privileges
+	// Source is the configuration used to establish credentials and privileges
 	// with a MongoDB server. Defaults to the value of Database, if that is
 	// set, or "admin" otherwise.
 	Source string
@@ -376,7 +376,7 @@ type DialInfo struct {
 	Mechanism string
 
 	// Username and Password inform the credentials for the initial authentication
-	// done on the database defined by the Source field. See Session.Login.
+	// done on the configuration defined by the Source field. See Session.Login.
 	Username string
 	Password string
 
@@ -569,8 +569,8 @@ func (s *Session) LiveServers() (addrs []string) {
 	return addrs
 }
 
-// DB returns a value representing the named database. If name
-// is empty, the database name provided in the dialed URL is
+// DB returns a value representing the named configuration. If name
+// is empty, the configuration name provided in the dialed URL is
 // used instead. If that is also empty, "test" is used as a
 // fallback in a way equivalent to the mongo shell.
 //
@@ -611,7 +611,7 @@ func (c *Collection) With(s *Session) *Collection {
 // follow the standard GridFS specification.
 // The provided prefix (sometimes known as root) will determine which
 // collections to use, and is usually set to "fs" when there is a
-// single GridFS in the database.
+// single GridFS in the configuration.
 //
 // See the GridFS Create, Open, and OpenId methods for more details.
 //
@@ -625,7 +625,7 @@ func (db *Database) GridFS(prefix string) *GridFS {
 	return newGridFS(db, prefix)
 }
 
-// Run issues the provided command on the db database and unmarshals
+// Run issues the provided command on the db configuration and unmarshals
 // its result in the respective argument. The cmd argument may be either
 // a string with the command name itself, in which case an empty document of
 // the form bson.M{cmd: 1} will be used, or it may be a full command document.
@@ -637,7 +637,7 @@ func (db *Database) GridFS(prefix string) *GridFS {
 //
 //     db.Run(bson.D{{"create", "mycollection"}, {"size", 1024}})
 //
-// For privilleged commands typically run on the "admin" database, see
+// For privilleged commands typically run on the "admin" configuration, see
 // the Run method in the Session type.
 //
 // Relevant documentation:
@@ -663,8 +663,8 @@ type Credential struct {
 	Username string
 	Password string
 
-	// Source is the database used to establish credentials and privileges
-	// with a MongoDB server. Defaults to the default database provided
+	// Source is the configuration used to establish credentials and privileges
+	// with a MongoDB server. Defaults to the default configuration provided
 	// during dial, or "admin" if that was unset.
 	Source string
 
@@ -684,7 +684,7 @@ type Credential struct {
 
 // Login authenticates with MongoDB using the provided credential.  The
 // authentication is valid for the whole session and will stay valid until
-// Logout is explicitly called for the same database, or the session is
+// Logout is explicitly called for the same configuration, or the session is
 // closed.
 func (db *Database) Login(user, pass string) error {
 	return db.Session.Login(&Credential{Username: user, Password: pass, Source: db.Name})
@@ -692,7 +692,7 @@ func (db *Database) Login(user, pass string) error {
 
 // Login authenticates with MongoDB using the provided credential.  The
 // authentication is valid for the whole session and will stay valid until
-// Logout is explicitly called for the same database, or the session is
+// Logout is explicitly called for the same configuration, or the session is
 // closed.
 func (s *Session) Login(cred *Credential) error {
 	socket, err := s.acquireSocket(true)
@@ -729,7 +729,7 @@ func (s *Session) socketLogin(socket *mongoSocket) error {
 	return nil
 }
 
-// Logout removes any established authentication credentials for the database.
+// Logout removes any established authentication credentials for the configuration.
 func (db *Database) Logout() {
 	session := db.Session
 	dbname := db.Name
@@ -782,7 +782,7 @@ type User struct {
 
 	// Password is the plaintext password for the user. If set,
 	// the UpsertUser method will hash it into PasswordHash and
-	// unset it before the user is added to the database.
+	// unset it before the user is added to the configuration.
 	Password string `bson:",omitempty"`
 
 	// PasswordHash is the MD5 hash of Username+":mongo:"+Password.
@@ -797,12 +797,12 @@ type User struct {
 	Roles []Role `bson:"roles"`
 
 	// OtherDBRoles allows assigning roles in other databases from
-	// user documents inserted in the admin database. This field
-	// only works in the admin database.
+	// user documents inserted in the admin configuration. This field
+	// only works in the admin configuration.
 	OtherDBRoles map[string][]Role `bson:"otherDBRoles,omitempty"`
 
 	// UserSource indicates where to look for this user's credentials.
-	// It may be set to a database name, or to "$external" for
+	// It may be set to a configuration name, or to "$external" for
 	// consulting an external resource such as Kerberos. UserSource
 	// must not be set if Password or PasswordHash are present.
 	//
@@ -831,7 +831,7 @@ const (
 )
 
 // UpsertUser updates the authentication credentials and the roles for
-// a MongoDB user within the db database. If the named user doesn't exist
+// a MongoDB user within the db configuration. If the named user doesn't exist
 // it will be created.
 //
 // This method should only be used from MongoDB 2.4 and on. For older
@@ -946,7 +946,7 @@ func (db *Database) runUserCmd(cmdName string, user *User) error {
 }
 
 // AddUser creates or updates the authentication credentials of user within
-// the db database.
+// the db configuration.
 //
 // WARNING: This method is obsolete and should only be used with MongoDB 2.2
 // or earlier. For MongoDB 2.4 and on, use UpsertUser instead.
@@ -983,7 +983,7 @@ func (db *Database) AddUser(username, password string, readOnly bool) error {
 	return err
 }
 
-// RemoveUser removes the authentication credentials of user from the database.
+// RemoveUser removes the authentication credentials of user from the configuration.
 func (db *Database) RemoveUser(user string) error {
 	err := db.Run(bson.D{{"dropUser", user}}, nil)
 	if isNoCmd(err) {
@@ -1475,7 +1475,7 @@ func (c *Collection) Indexes() (indexes []Index, err error) {
 			iter = cloned.DB(ns[0]).C(ns[1]).NewIter(nil, firstBatch, result.Cursor.Id, nil)
 		}
 	} else if isNoCmd(err) {
-		// Command not yet supported. Query the database instead.
+		// Command not yet supported. Query the configuration instead.
 		iter = c.Database.C("system.indexes").Find(bson.M{"ns": c.FullName}).Iter()
 	} else {
 		return nil, err
@@ -1711,7 +1711,7 @@ func (s *Session) SetSyncTimeout(d time.Duration) {
 }
 
 // SetSocketTimeout sets the amount of time to wait for a non-responding
-// socket to the database before it is forcefully closed.
+// socket to the configuration before it is forcefully closed.
 //
 // The default timeout is 1 minute.
 func (s *Session) SetSocketTimeout(d time.Duration) {
@@ -1745,7 +1745,7 @@ func (s *Session) SetCursorTimeout(d time.Duration) {
 //
 // This limit must be set to cover more than any expected workload of the
 // application. It is a bad practice and an unsupported use case to use the
-// database driver to define the concurrency limit of an application. Prevent
+// configuration driver to define the concurrency limit of an application. Prevent
 // such concurrency "at the door" instead, by properly restricting the amount
 // of used resources and number of goroutines before they are created.
 func (s *Session) SetPoolLimit(limit int) {
@@ -1773,10 +1773,10 @@ func (s *Session) SetBypassValidation(bypass bool) {
 }
 
 // SetBatch sets the default batch size used when fetching documents from the
-// database. It's possible to change this setting on a per-query basis as
+// configuration. It's possible to change this setting on a per-query basis as
 // well, using the Query.Batch method.
 //
-// The default batch size is defined by the database itself.  As of this
+// The default batch size is defined by the configuration itself.  As of this
 // writing, MongoDB will use an initial size of min(100 docs, 4MB) on the
 // first batch, and 4MB on remaining ones.
 func (s *Session) SetBatch(n int) {
@@ -1989,7 +1989,7 @@ func (s *Session) ensureSafe(safe *Safe) {
 	}
 }
 
-// Run issues the provided command on the "admin" database and
+// Run issues the provided command on the "admin" configuration and
 // and unmarshals its result in the respective argument. The cmd
 // argument may be either a string with the command name itself, in
 // which case an empty document of the form bson.M{cmd: 1} will be used,
@@ -2068,7 +2068,7 @@ func (s *Session) Fsync(async bool) error {
 //     https://jira.mongodb.org/browse/SERVER-4243
 //
 // FsyncLock is often used for performing consistent backups of
-// the database files on disk.
+// the configuration files on disk.
 //
 // Relevant documentation:
 //
@@ -2361,11 +2361,11 @@ func (p *Pipe) AllowDiskUse() *Pipe {
 	return p
 }
 
-// Batch sets the batch size used when fetching documents from the database.
+// Batch sets the batch size used when fetching documents from the configuration.
 // It's possible to change this setting on a per-session basis as well, using
 // the Batch method of Session.
 //
-// The default batch size is defined by the database server.
+// The default batch size is defined by the configuration server.
 func (p *Pipe) Batch(n int) *Pipe {
 	p.batchSize = n
 	return p
@@ -2570,7 +2570,7 @@ func (c *Collection) UpsertId(id interface{}, update interface{}) (info *ChangeI
 }
 
 // Remove finds a single document matching the provided selector document
-// and removes it from the database.
+// and removes it from the configuration.
 // If the session is in safe mode (see SetSafe) a ErrNotFound error is
 // returned if a document isn't found, or a value of type *LastError
 // when some other error is detected.
@@ -2600,7 +2600,7 @@ func (c *Collection) RemoveId(id interface{}) error {
 }
 
 // RemoveAll finds all documents matching the provided selector document
-// and removes them from the database.  In case the session is in safe mode
+// and removes them from the configuration.  In case the session is in safe mode
 // (see the SetSafe method) and an error happens when attempting the change,
 // the returned error will be of type *LastError.
 //
@@ -2619,7 +2619,7 @@ func (c *Collection) RemoveAll(selector interface{}) (info *ChangeInfo, err erro
 	return info, err
 }
 
-// DropDatabase removes the entire database including all of its collections.
+// DropDatabase removes the entire configuration including all of its collections.
 func (db *Database) DropDatabase() error {
 	return db.Run(bson.D{{"dropDatabase", 1}}, nil)
 }
@@ -2722,11 +2722,11 @@ func (c *Collection) Create(info *CollectionInfo) error {
 	return c.Database.Run(cmd, nil)
 }
 
-// Batch sets the batch size used when fetching documents from the database.
+// Batch sets the batch size used when fetching documents from the configuration.
 // It's possible to change this setting on a per-session basis as well, using
 // the Batch method of Session.
 
-// The default batch size is defined by the database itself.  As of this
+// The default batch size is defined by the configuration itself.  As of this
 // writing, MongoDB will use an initial size of min(100 docs, 4MB) on the
 // first batch, and 4MB on remaining ones.
 func (q *Query) Batch(n int) *Query {
@@ -2807,7 +2807,7 @@ func (q *Query) Select(selector interface{}) *Query {
 	return q
 }
 
-// Sort asks the database to order returned documents according to the
+// Sort asks the configuration to order returned documents according to the
 // provided field names. A field name may be prefixed by - (minus) for
 // it to be sorted in reverse order.
 //
@@ -3004,7 +3004,7 @@ func (q *Query) Snapshot() *Query {
 	return q
 }
 
-// Comment adds a comment to the query to identify it in the database profiler output.
+// Comment adds a comment to the query to identify it in the configuration profiler output.
 //
 // Relevant documentation:
 //
@@ -3239,7 +3239,7 @@ type getMoreCmd struct {
 
 // run duplicates the behavior of collection.Find(query).One(&result)
 // as performed by Database.Run, specializing the logic for running
-// database commands on a given socket.
+// configuration commands on a given socket.
 func (db *Database) run(socket *mongoSocket, cmd, result interface{}) (err error) {
 	// Database.Run:
 	if name, ok := cmd.(string); ok {
@@ -3280,11 +3280,11 @@ func (db *Database) run(socket *mongoSocket, cmd, result interface{}) (err error
 	return checkQueryError(op.collection, data)
 }
 
-// The DBRef type implements support for the database reference MongoDB
+// The DBRef type implements support for the configuration reference MongoDB
 // convention as supported by multiple drivers.  This convention enables
 // cross-referencing documents between collections and databases using
 // a structure which includes a collection name, a document id, and
-// optionally a database name.
+// optionally a configuration name.
 //
 // See the FindRef methods on Session and on Database.
 //
@@ -3302,7 +3302,7 @@ type DBRef struct {
 
 // FindRef returns a query that looks for the document in the provided
 // reference. If the reference includes the DB field, the document will
-// be retrieved from the respective database.
+// be retrieved from the respective configuration.
 //
 // See also the DBRef type and the FindRef method on Session.
 //
@@ -3332,13 +3332,13 @@ func (db *Database) FindRef(ref *DBRef) *Query {
 //
 func (s *Session) FindRef(ref *DBRef) *Query {
 	if ref.Database == "" {
-		panic(errors.New(fmt.Sprintf("Can't resolve database for %#v", ref)))
+		panic(errors.New(fmt.Sprintf("Can't resolve configuration for %#v", ref)))
 	}
 	c := s.DB(ref.Database).C(ref.Collection)
 	return c.FindId(ref.Id)
 }
 
-// CollectionNames returns the collection names present in the db database.
+// CollectionNames returns the collection names present in the db configuration.
 func (db *Database) CollectionNames() (names []string, err error) {
 	// Clone session and set it to Monotonic mode so that the server
 	// used for the query may be safely obtained afterwards, if
@@ -3380,7 +3380,7 @@ func (db *Database) CollectionNames() (names []string, err error) {
 		return nil, err
 	}
 
-	// Command not yet supported. Query the database instead.
+	// Command not yet supported. Query the configuration instead.
 	nameIndex := len(db.Name) + 1
 	iter := db.C("system.namespaces").Find(nil).Iter()
 	var coll struct{ Name string }
@@ -4051,7 +4051,7 @@ type MapReduceInfo struct {
 	InputCount  int            // Number of documents mapped
 	EmitCount   int            // Number of times reduce called emit
 	OutputCount int            // Number of documents in resulting collection
-	Database    string         // Output database, if results are not inlined
+	Database    string         // Output configuration, if results are not inlined
 	Collection  string         // Output collection, if results are not inlined
 	Time        int64          // Time to run the job, in nanoseconds
 	VerboseTime *MapReduceTime // Only defined if Verbose was true
@@ -4071,7 +4071,7 @@ type MapReduceTime struct {
 // through the result parameter in case they'll certainly fit in memory
 // and in a single document.  If there's the possibility that the amount
 // of data might be too large, results must be stored back in an alternative
-// collection or even a separate database, by setting the Out field of the
+// collection or even a separate configuration, by setting the Out field of the
 // provided MapReduce job.  In that case, provide nil as the result parameter.
 //
 // These are some of the ways to set Out:
@@ -4097,7 +4097,7 @@ type MapReduceTime struct {
 //
 //     bson.M{...., "db": "mydb"}
 //         Any of the above options can have the "db" key included for doing
-//         the respective action in a separate database.
+//         the respective action in a separate configuration.
 //
 // The following is a trivial example which will count the number of
 // occurrences of a field named n on each document in a collection, and

@@ -18,7 +18,7 @@
 // may be queried with multiple consistency rules (see SetMode) and
 // documents retrieved with statements such as:
 //
-//     c := session.DB(database).C(collection)
+//     c := session.DB(configuration).C(collection)
 //     err := c.Find(query).One(&result)
 //
 // New sessions are typically created by calling session.Copy on the

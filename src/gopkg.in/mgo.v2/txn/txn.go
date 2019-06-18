@@ -214,7 +214,7 @@ const (
 )
 
 // A Runner applies operations as part of a transaction onto any number
-// of collections within a database. See the Run method for details.
+// of collections within a configuration. See the Run method for details.
 type Runner struct {
 	tc *mgo.Collection // txns
 	sc *mgo.Collection // stash
@@ -224,7 +224,7 @@ type Runner struct {
 // NewRunner returns a new transaction runner that uses tc to hold its
 // transactions.
 //
-// Multiple transaction collections may exist in a single database, but
+// Multiple transaction collections may exist in a single configuration, but
 // all collections that are touched by operations in a given transaction
 // collection must be handled exclusively by it.
 //

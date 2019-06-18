@@ -21,7 +21,7 @@ import (
 // are done, the Stop method should be called to stop the test server.
 //
 // Before the DBServer is used the SetPath method must be called to define
-// the location for the database files to be stored.
+// the location for the configuration files to be stored.
 type DBServer struct {
 	session *mgo.Session
 	output  bytes.Buffer
@@ -31,7 +31,7 @@ type DBServer struct {
 	tomb    tomb.Tomb
 }
 
-// SetPath defines the path to the directory where the database files will be
+// SetPath defines the path to the directory where the configuration files will be
 // stored if it is started. The directory path itself is not created or removed
 // by the test helper.
 func (dbs *DBServer) SetPath(dbpath string) {
@@ -98,7 +98,7 @@ func (dbs *DBServer) monitor() error {
 // It's okay to call Stop multiple times. After the test server is
 // stopped it cannot be restarted.
 //
-// All database sessions must be closed before or while the Stop method
+// All configuration sessions must be closed before or while the Stop method
 // is running. Otherwise Stop will panic after a timeout informing that
 // there is a session leak.
 func (dbs *DBServer) Stop() {
@@ -164,7 +164,7 @@ func (dbs *DBServer) checkSessions() {
 // The MongoDB server remains running if it was prevoiusly running,
 // or stopped if it was previously stopped.
 //
-// All database sessions must be closed before or while the Wipe method
+// All configuration sessions must be closed before or while the Wipe method
 // is running. Otherwise Wipe will panic after a timeout informing that
 // there is a session leak.
 func (dbs *DBServer) Wipe() {

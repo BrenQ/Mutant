@@ -147,13 +147,13 @@ type replyOp struct {
 }
 
 type insertOp struct {
-	collection string        // "database.collection"
+	collection string        // "configuration.collection"
 	documents  []interface{} // One or more documents to insert
 	flags      uint32
 }
 
 type updateOp struct {
-	Collection string      `bson:"-"` // "database.collection"
+	Collection string      `bson:"-"` // "configuration.collection"
 	Selector   interface{} `bson:"q"`
 	Update     interface{} `bson:"u"`
 	Flags      uint32      `bson:"-"`
@@ -162,7 +162,7 @@ type updateOp struct {
 }
 
 type deleteOp struct {
-	Collection string      `bson:"-"` // "database.collection"
+	Collection string      `bson:"-"` // "configuration.collection"
 	Selector   interface{} `bson:"q"`
 	Flags      uint32      `bson:"-"`
 	Limit      int         `bson:"limit"`

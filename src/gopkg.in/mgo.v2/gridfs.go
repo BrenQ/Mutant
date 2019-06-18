@@ -559,7 +559,7 @@ func (file *GridFile) Abort() {
 // wrong happened.
 //
 // The file will internally cache the data so that all but the last
-// chunk sent to the database have the size defined by SetChunkSize.
+// chunk sent to the configuration have the size defined by SetChunkSize.
 // This also means that errors may be deferred until a future call
 // to Write or Close.
 //

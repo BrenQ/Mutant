@@ -376,7 +376,7 @@ type Symbol string
 
 // Now returns the current time with millisecond precision. MongoDB stores
 // timestamps with the same precision, so a Time returned from this method
-// will not change after a roundtrip to the database. That's the only reason
+// will not change after a roundtrip to the configuration. That's the only reason
 // why this function exists. Using the time.Now function also works fine
 // otherwise.
 func Now() time.Time {
@@ -390,11 +390,11 @@ type MongoTimestamp int64
 type orderKey int64
 
 // MaxKey is a special value that compares higher than all other possible BSON
-// values in a MongoDB database.
+// values in a MongoDB configuration.
 var MaxKey = orderKey(1<<63 - 1)
 
 // MinKey is a special value that compares lower than all other possible BSON
-// values in a MongoDB database.
+// values in a MongoDB configuration.
 var MinKey = orderKey(-1 << 63)
 
 type undefined struct{}

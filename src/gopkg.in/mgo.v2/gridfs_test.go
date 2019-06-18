@@ -563,7 +563,7 @@ func (s *S) TestGridFSSeek(c *C) {
 	c.Assert(b, DeepEquals, []byte("ijklm"))
 
 	// Trivial seek forward within same chunk. Already
-	// got the data, shouldn't touch the database.
+	// got the data, shouldn't touch the configuration.
 	sent := mgo.GetStats().SentOps
 	o, err = file.Seek(1, os.SEEK_CUR)
 	c.Assert(err, IsNil)

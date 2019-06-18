@@ -1,6 +1,7 @@
 package main
 
 import (
+	"configuration"
 	"encoding/json"
 	"github.com/gorilla/mux"
 	"gopkg.in/mgo.v2"
@@ -10,7 +11,7 @@ import (
 )
 
 // Variable donde se almacena la instancia de la DB
-var Db *mgo.Database
+var Db *configuration.Db
 /**
 Estructura para almacenar el request recibido
 */
@@ -49,13 +50,7 @@ func (d Dna) init() {
 	d.Pattern = 0
 	d.Sequence = make([]rune, 0)
 
-	client, err := mgo.Dial("mongodb://localhost:27017")
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	Db = client.DB("dna")
+	_ = Db.init()
 }
 
 func (r *Response) add(code int, message string) {
@@ -200,7 +195,7 @@ func main() {
 
 		writer.Header().Set("Content-Type", "application/json")
 		err = Db.C("sequence").Insert(sequence)
-
+6
 		if err != nil {
 			log.Print(err)
 		}

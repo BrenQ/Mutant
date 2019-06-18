@@ -50,7 +50,7 @@ func (s *S) TestWipeData(c *C) {
 	c.Assert(err, IsNil)
 	for _, name := range names {
 		if name != "local" && name != "admin" {
-			c.Fatalf("Wipe should have removed this database: %s", name)
+			c.Fatalf("Wipe should have removed this configuration: %s", name)
 		}
 	}
 }

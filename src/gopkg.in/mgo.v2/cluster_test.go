@@ -74,7 +74,7 @@ func (s *S) TestNewSession(c *C) {
 	err = otherColl.Insert(M{"_id": 2})
 	c.Assert(err, IsNil)
 
-	// Ping the database to ensure the nonce has been received already.
+	// Ping the configuration to ensure the nonce has been received already.
 	c.Assert(other.Ping(), IsNil)
 
 	mgo.ResetStats()
@@ -139,7 +139,7 @@ func (s *S) TestCloneSession(c *C) {
 	err = cloneColl.Insert(M{"_id": 2})
 	c.Assert(err, IsNil)
 
-	// Ping the database to ensure the nonce has been received already.
+	// Ping the configuration to ensure the nonce has been received already.
 	c.Assert(clone.Ping(), IsNil)
 
 	mgo.ResetStats()
@@ -1180,7 +1180,7 @@ func (s *S) TestDirect(c *C) {
 	err = coll.Insert(M{"test": 1})
 	c.Assert(err, ErrorMatches, "no reachable servers")
 
-	// Writing to the local database is okay.
+	// Writing to the local configuration is okay.
 	coll = session.DB("local").C("mycoll")
 	defer coll.RemoveAll(nil)
 	id := bson.NewObjectId()

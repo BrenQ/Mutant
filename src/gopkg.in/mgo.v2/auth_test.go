@@ -43,7 +43,7 @@ import (
 )
 
 func (s *S) TestAuthLoginDatabase(c *C) {
-	// Test both with a normal database and with an authenticated shard.
+	// Test both with a normal configuration and with an authenticated shard.
 	for _, addr := range []string{"localhost:40002", "localhost:40203"} {
 		session, err := mgo.Dial(addr)
 		c.Assert(err, IsNil)
@@ -67,7 +67,7 @@ func (s *S) TestAuthLoginDatabase(c *C) {
 }
 
 func (s *S) TestAuthLoginSession(c *C) {
-	// Test both with a normal database and with an authenticated shard.
+	// Test both with a normal configuration and with an authenticated shard.
 	for _, addr := range []string{"localhost:40002", "localhost:40203"} {
 		session, err := mgo.Dial(addr)
 		c.Assert(err, IsNil)
@@ -95,7 +95,7 @@ func (s *S) TestAuthLoginSession(c *C) {
 }
 
 func (s *S) TestAuthLoginLogout(c *C) {
-	// Test both with a normal database and with an authenticated shard.
+	// Test both with a normal configuration and with an authenticated shard.
 	for _, addr := range []string{"localhost:40002", "localhost:40203"} {
 		session, err := mgo.Dial(addr)
 		c.Assert(err, IsNil)
@@ -242,7 +242,7 @@ func (s *S) TestAuthUpsertUser(c *C) {
 	err = othercoll.Find(nil).One(nil)
 	c.Assert(err, Equals, mgo.ErrNotFound)
 
-	// Can't login directly into the database using UserSource, though.
+	// Can't login directly into the configuration using UserSource, though.
 	err = myotherdb.Login("myrwuser", "mypass")
 	c.Assert(err, ErrorMatches, "auth fail(s|ed)|.*Authentication failed.")
 }
@@ -766,7 +766,7 @@ func (s *S) TestAuthURLWithDatabase(c *C) {
 	err = mydb.AddUser("myruser", "mypass", true)
 	c.Assert(err, IsNil)
 
-	// Test once with database, and once with source.
+	// Test once with configuration, and once with source.
 	for i := 0; i < 2; i++ {
 		var url string
 		if i == 0 {
