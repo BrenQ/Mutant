@@ -39,3 +39,56 @@ Nivel 3: Anexar una base de datos, la cual guarde los ADN’s verificados con la
 
 Tener en cuenta que la API puede recibir fluctuaciones agresivas de tráfico (Entre 100 y 1 millón de peticiones por segundo).
 
+## Instalación 
+
+Para la instalación se recomienda tener en cuenta las configuraciones necesarias para correr Go [enter link description here](https://golang.org/doc/install#install)
+
+A continuación , ejecute el siguiente comando :
+
+    go get -u github.com/BrenQ/Mutant
+
+Con este comando podrá obtener el proyecto :) 
+
+## Usabilidad
+
+Para correr el proyecto deberá ejecutar el comando 
+
+    > go run main.go
+
+Una vez ejecutado el siguiente comando se quedará el servidor escuchando en el puerto :5000 
+
+Para verificar que su secuencia de ADN pertenece a un humano o un mutante va a tener que hacer la petición a la siguiente ruta con la estructura que se brinda a continuación:
+
+
+ - URL : `/mutant`
+ - Method: `POST`
+ - Auth required : `No`
+ - Data required : 
+     - `dna`
+
+   Example
+	  
+>     POST /mutant
+>            {
+>             		  "dna": [
+>             		    "ATGCGA",
+>             		    "CAGTGC",
+>             		    "TTATGT",
+>             		    "AGAAGG",
+>             		    "CCCCTA",
+>             		    "TCACTG"
+>            ]  
+>       }
+	
+
+## Success response
+
+**Condicion** : Si se verifica que un humano es mutante :
+**Code**: `200 - OK`
+
+## Error response
+
+**Condicion** : Si un humano no es mutante:
+**Code**: `403-Forbidden `
+
+
