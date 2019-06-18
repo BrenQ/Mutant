@@ -103,13 +103,17 @@ Puede consultar esta info
      - `No`
      -
     GET /stats
-	    {
-	       “count_mutant_dna”:40, 
-	      “count_human_dna”:100: 
-	      “ratio”:0.4
-	   } 
+ 
+	*Response*
+	
+       {
+           “count_mutant_dna”:40, 
+          “count_human_dna”:100: 
+          “ratio”:0.4
+       } 
 
 ## Success response
 
 **Condicion** : Devuelve la estadística almacenada :
 **Code**: `200 - OK`
+
