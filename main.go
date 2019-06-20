@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/BrenQ/Mutant/mongodb"
 	"encoding/json"
 	"github.com/gorilla/mux"
 	"gopkg.in/mgo.v2"
@@ -8,6 +9,7 @@ import (
 	"log"
 	"net/http"
 )
+
 
 // Variable donde se almacena la instancia de la DB
 var Db *mgo.Database
@@ -48,14 +50,6 @@ func (d Dna) init() {
 	d.Size = 0
 	d.Pattern = 0
 	d.Sequence = make([]rune, 0)
-
-	client, err := mgo.Dial("mongodb://localhost:27017")
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	Db = client.DB("dna")
 }
 
 func (r *Response) add(code int, message string) {
@@ -181,6 +175,15 @@ func (d *Dna) check(function func(index int, n int) int, index int, letter rune,
 
 func main() {
 
+	var Db mongodb.Database
+	// Variable donde obtengo la sesion de la base de datos
+	var Sess , err = Db.Init()
+
+	panic(Sess)
+	if err != nil{
+		panic(err)
+	}
+
 	router := mux.NewRouter()
 	/**
 	@method  Ruta donde se realiza la verificacion si un ADN recibido pertenece a un humano o mutante
@@ -199,7 +202,7 @@ func main() {
 		_ = sequence.isMutant(DnaSequence.Dna)
 
 		writer.Header().Set("Content-Type", "application/json")
-		err = Db.C("sequence").Insert(sequence)
+		err = Sess.Database.C("sequence").Insert(sequence)
 
 		if err != nil {
 			log.Print(err)
@@ -243,10 +246,11 @@ func main() {
 		}
 
 var result []bson.M
-_ = Db.C("sequence").Pipe(pipeline).All(&result)
+_ = Sess.Database.C("sequence").Pipe(pipeline).All(&result)
 
 _ = json.NewEncoder(writer).Encode(result)
 
 }).Methods("GET")
+
 log.Fatal(http.ListenAndServe(":6000", router))
 }
