@@ -2,29 +2,35 @@ package mongodb
 
 import (
 	"gopkg.in/mgo.v2"
+	"time"
 )
 const (
-	DATABASEHOST = "mongodb://localhost:27017"
-	DATABASENAME= "dna"
+	DATABASE_HOST = "127.0.0.1:27017"
+	DATABASE_NAME = "dna"
+	DATABASE_USER = "brenq"
+	DATABASE_PASS = "mutant"
 )
 
 type Database struct {
-	Session *mgo.Session
+	Sess *mgo.Session
 	Database *mgo.Database
 }
 
 func (db * Database) Init() (*Database , error)  {
 
 	session, err := mgo.DialWithInfo(&mgo.DialInfo{
-		Addrs: []string{DATABASEHOST},
-		Database: DATABASENAME,
+		Addrs:    []string{DATABASE_HOST},
+		Timeout:  30 * time.Second,
+		Database: DATABASE_NAME,
+		Username: DATABASE_USER,
+		Password: DATABASE_PASS,
 	})
 
 	if err != nil {
 		return nil , err
 	}
 
-	database := session.DB(DATABASENAME)
+	database := session.DB(DATABASE_NAME)
 
 	return &Database{session, database} , nil
 }
