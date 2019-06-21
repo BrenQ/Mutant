@@ -5,7 +5,9 @@ import (
 	"github.com/BrenQ/Mutant/utils"
 )
 
-
+/**
+	Defino estructura basada en el modelo DNA
+ */
 type DnaService struct {
 	*models.Dna
 }
@@ -95,8 +97,11 @@ func iterate(d* DnaService, index int, letter rune) {
 		}
 	}
 }
+
 /**
-@method Funcion para validar si se detecta algun patron
+@method Funcion recursiva que segun la direccion calculada a travez del indica
+		verifica si existe un patron y lo acumula.
+		Se comprueba un patron si este tiene 4 letras contiguas segun su direcicon
 */
 
 func check(d* DnaService, function func(index int, n int) int, index int, letter rune, pattern int) bool {

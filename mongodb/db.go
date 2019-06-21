@@ -20,7 +20,7 @@ type Database struct {
 	Database *mgo.Database
 }
 
-func (db * Database) Init() (*Database , error)  {
+func (db * Database) Init() (*Database )  {
 
 	session, err := mgo.DialWithInfo(&mgo.DialInfo{
 		Addrs:    []string{DATABASE_HOST},
@@ -31,10 +31,10 @@ func (db * Database) Init() (*Database , error)  {
 	})
 
 	if err != nil {
-		return nil , err
+		panic(err)
 	}
 
 	database := session.DB(DATABASE_NAME)
 
-	return &Database{session, database} , nil
+	return &Database{session, database}
 }

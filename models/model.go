@@ -8,7 +8,7 @@ type Response struct {
 	Message string `json:"message,omitempty"`
 }
 
-func (r *Response) add(code int, message string) {
+func (r *Response) Add(code int, message string) {
 	if r != nil {
 		r.Code = code
 		r.Message = message
