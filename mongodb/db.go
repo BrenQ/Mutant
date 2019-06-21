@@ -1,5 +1,9 @@
 package mongodb
 
+/**
+	Package para obtener los datos de la sesion
+	y la base de datos
+ */
 import (
 	"gopkg.in/mgo.v2"
 	"time"
