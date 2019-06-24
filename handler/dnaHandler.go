@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"context"
 	"encoding/json"
 	"github.com/BrenQ/Mutant/models"
 	"github.com/BrenQ/Mutant/mongodb"
@@ -26,7 +27,7 @@ func Mutant(writer  http.ResponseWriter, request *http.Request)  {
 
 	var Database  = Db.Init()
 
-	var Sess = Database.Sess.Copy()
+	var Sess = Database.Sess
 
 	writer.Header().Set("Content-Type", "application/json")
 
@@ -52,7 +53,7 @@ func Mutant(writer  http.ResponseWriter, request *http.Request)  {
 
 
 	writer.Header().Set("Content-Type", "application/json")
-	err = Sess.DB("dna").C("sequence").Insert(model)
+	_ , err = Sess.Database("dna").Collection("sequence").InsertOne(context.Background(),model)
 
 	if err != nil {
 		log.Print(err)
@@ -71,7 +72,7 @@ func Stats (writer http.ResponseWriter, request *http.Request) {
 
 	var Database  = Db.Init()
 
-	var Sess = Database.Sess.Copy()
+	var Sess = Database.Sess
 
 	pipeline := []bson.M{
 		bson.M{"$group":
@@ -100,9 +101,17 @@ func Stats (writer http.ResponseWriter, request *http.Request) {
 		},
 	}
 
-	var result []bson.M
-	_ = Sess.DB("dna").C("sequence").Pipe(pipeline).All(&result)
+	var result []interface{}
+	cursor , err := Sess.Database("dna").Collection("sequence").Aggregate(context.Background(), pipeline)
+	if err != nil {
+		panic(err)
+	}
 
+	err = cursor.All(context.Background(), &result )
+
+	if err != nil {
+		panic(err)
+	}
 	_ = json.NewEncoder(writer).Encode(result)
 
 }

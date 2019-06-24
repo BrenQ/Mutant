@@ -5,36 +5,26 @@ package mongodb
 	y la base de datos
  */
 import (
-	"gopkg.in/mgo.v2"
+	"go.mongodb.org/mongo-driver/mongo/options"
 	"time"
-)
-const (
-	DATABASE_HOST = "127.0.0.1:27017"
-	DATABASE_NAME = "dna"
-	DATABASE_USER = "brenq"
-	DATABASE_PASS = "mutant"
+	"context"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 type Database struct {
-	Sess *mgo.Session
-	Database *mgo.Database
+	Sess *mongo.Client
+	Database *mongo.Database
 }
 
-func (db * Database) Init() (*Database )  {
+func (db * Database) Init() *Database  {
 
-	session, err := mgo.DialWithInfo(&mgo.DialInfo{
-		Addrs:    []string{DATABASE_HOST},
-		Timeout:  30 * time.Second,
-		Database: DATABASE_NAME,
-		Username: DATABASE_USER,
-		Password: DATABASE_PASS,
-	})
+	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 
-	if err != nil {
-		panic(err)
-	}
+	clientOptions := options.Client().ApplyURI("mongodb+srv://brenq:mutant@cluster0-sxpqo.gcp.mongodb.net/test?retryWrites=true&w=majority")
+	session, _ := mongo.Connect(ctx, clientOptions)
 
-	database := session.DB(DATABASE_NAME)
+
+	database := session.Database(DATABASE_NAME)
 
 	return &Database{session, database}
 }

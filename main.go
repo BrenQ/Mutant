@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
 	"github.com/BrenQ/Mutant/handler"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 )

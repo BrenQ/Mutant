@@ -1,0 +1,61 @@
+swagger: "2.0"
+info:
+  description: "A simple Google Cloud Endpoints API example."
+  title: "Endpoints Example"
+  version: "1.0.0"
+host: "echo-api.endpoints.deep-sphere-244300.cloud.goog"
+# [END swagger]
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+schemes:
+  # Uncomment the next line if you configure SSL for this API.
+  #- "https"
+  - "http"
+paths:
+  "/mutant":
+    post:
+      description: "Returns if dna passed is belong to mutant or human"
+      operationId: "echo"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "Is a Mutant"
+          schema:
+            $ref: "#/definitions/echoMessage"
+      parameters:
+        - description: "Message to echo"
+          in: body
+          name: message
+          required: true
+          schema:
+            $ref: "#/definitions/echoMessage"
+      security:
+        - api_key: []
+  "/stats":
+    get:
+      description: "Returns the requests' authentication information."
+      operationId: "auth_info_google_jwt"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "Stats"
+          schema:
+            $ref: "#/definitions/authInfoResponse"
+      security:
+        - google_jwt: []
+definitions:
+  echoMessage:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+  authInfoResponse:
+    properties:
+      id:
+        type: "string"
+      email:
+        type: "string"
